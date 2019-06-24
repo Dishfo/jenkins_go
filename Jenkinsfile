@@ -8,9 +8,13 @@ pipeline {
                 sh 'go version'
                 sh 'echo "$PWD"'
                 sh 'env'
+
+                sh 'cp -r "$PWD" "${GOPATH}/src"'
+                sh 'cd "${GOPATH}/src/${PWD##*/}"'
+                sh 'go build -o j_go'
             }
         }
-        
+
 
     }
 
