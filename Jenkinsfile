@@ -7,10 +7,11 @@ pipeline {
                 sh 'echo  BUILD'
                 sh 'go version'
                 sh 'echo "$PWD"'
-                sh 'env'
 
-                sh 'cp -r "$PWD" "${GOPATH}/src"'
-                sh 'cd "${GOPATH}/src/${PWD##*/}"'
+                sh 'file=${PWD##*/}'
+                sh 'cd "${GOPATH}/src"'
+                sh 'git clone "${GIT_URL}"'
+                sh 'cd jenkins_go'
                 sh 'go build -o j_go'
             }
         }
