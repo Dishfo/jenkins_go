@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'echo  BUILD'
                 sh 'go version'
-                sh 'go build J_go'
+                sh 'echo "$PWD"'
             }
         }
 
