@@ -14,6 +14,7 @@ pipeline {
 
                 sh 'file=${PWD##*/}'
                 sh 'cd "${GOPATH}/src"'
+                sh 'rm -rf "jenkins_go"'
                 sh 'git clone "${GIT_URL}"'
                 sh 'cd jenkins_go'
                 sh 'go build -o j_go'
