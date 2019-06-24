@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage ('Build') {
+        stage ('Run') {
             steps {
                 sh './j_go'
             }
